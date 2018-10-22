@@ -1,5 +1,5 @@
 ---
-title: Техническая документация РФИ Банк
+title: Техническая документация РФИ Банк 2.0
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
