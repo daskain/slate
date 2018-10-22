@@ -79,7 +79,7 @@
         highlight.call(searchInput);
       } else {
         searchResults.html('<li></li>');
-        $('.search-results li').text('No Results Found for "' + searchInput.value + '"');
+        $('.search-results li').text('Не результата по запросу "' + searchInput.value + '"');
       }
     } else {
       unhighlight();

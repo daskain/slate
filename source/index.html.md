@@ -1,15 +1,16 @@
 ---
-title: API Reference
+title: Техническая документация РФИ Банк
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
+  - php: PHP
+  - java: Java
   - python
-  - javascript
+  - json: JSON
+
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://home.rficb.ru/'>Личный кабинет интернет-эквайринга</a>
+  - <a href='https://github.com/lord/slate'>Powered by Slate</a>
 
 includes:
   - errors
@@ -17,59 +18,42 @@ includes:
 search: true
 ---
 
-# Introduction
+# Введение
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Добро пожаловать на главную страницу технчиеской документации РФИ Банка. 
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Документация создана при помощи [Slate](https://github.com/lord/slate).
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Создание сервиса
 
-# Authentication
+> Для авторизации используйте следующий код:
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```php
+echo('Hello, world!')
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
+```java
+('Hello, world')
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
+```java
+# А что же тут будет написано
 curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+> Сервис Вы можете создать в [личном кабинете интернет-эквайринга](https://home.rficb.ru).
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Тестовое наполнение <code>meowmeowmeow</code>.
 </aside>
 
-# Kittens
+# Webhook нотификации
 
-## Get All Kittens
+## Стандартные параметры
 
-```ruby
+```php
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -83,19 +67,13 @@ api = kittn.authorize('meowmeowmeow')
 api.kittens.get()
 ```
 
-```shell
+```java
 curl "http://example.com/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> Возвращается JSON:
 
 ```json
 [
@@ -116,11 +94,11 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+Тест-тест-тест.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://partner.rficb.ru `
 
 ### Query Parameters
 

@@ -23,13 +23,15 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #2E3336 !default;
+$nav-bg: #e31b42 !default;
 $examples-bg: #2E3336 !default;
 $code-bg: #1E2224 !default;
 $code-annotation-bg: #191D1F !default;
-$nav-subitem-bg: #1E2224 !default;
-$nav-active-bg: #0F75D4 !default;
-$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
+$nav-subitem-bg: #FFF !default; //цвет превью поиска #dd5570
+$nav-active-bg: #0F75D4 !default; // цвет синий, отображает переход, сделать бледным
+$nav-active-parent-bg: #b51534 !default; // parent links of the current section #1E2224  после выделения родительского и перехода в подменю
+$nav-select-line: #f3a3b3; // бледно красное для выделения вместо синего
+$nav-select-parent-line: #fff;
 $lang-select-border: #000 !default;
 $lang-select-bg: #1E2224 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
@@ -44,7 +46,9 @@ $search-notice-bg: #c97a7e !default;
 // TEXT COLORS
 ////////////////////
 $main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
+$nav-text: #FFF !default;
+$nav-text-search: #e31b42; // цвет букв в превью поиска
+$nav-text-prev: #e31b42; // цвет букв в подменю - красный, основной, корп
 $nav-active-text: #fff !default;
 $nav-active-parent-text: #fff !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
