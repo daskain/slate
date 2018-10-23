@@ -10,7 +10,9 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://home.rficb.ru/'>Личный кабинет интернет-эквайринга</a>
+  - <a href='https://github.com/RFIBANK/'>Наш репозиторий</a>
   - <a href='https://github.com/lord/slate'>Powered by Slate</a>
+  
 
 includes:
   - errors
@@ -20,27 +22,57 @@ search: true
 
 # Введение
 
-Добро пожаловать на главную страницу технчиеской документации РФИ Банка. 
+Добро пожаловать на главную страницу технической документации РФИ Банка.
+Здесь вы найдете необходимую информаци о взаимодействии сервисов партнера и Банка.
 
-Документация создана при помощи [Slate](https://github.com/lord/slate).
+# Личный кабинет интернет-эквайринга
 
-# Создание сервиса
+В личном кабинете собраны различные инструменты:
+1. this starts a list *with* numbers
++  this will show as number "2"
+*  this will show as number "3."
+9. any number, +, -, or * will keep the list going.
+    * just indent by 4 spaces (or tab) to make a sub-list
+        1. keep indenting for more sub lists
+    * here i'm back to the second level
+* an asterisk starts an unordered list
+* and this is another item in the list
++ or you can also use the + character
+- or the - character
 
-> Для авторизации используйте следующий код:
+To start an ordered list, write this:
 
-```php
-echo('Hello, world!')
-```
+1. this starts a list *with* numbers
++  this will show as number "2"
+*  this will show as number "3."
+9. any number, +, -, or * will keep the list going.
+    * just indent by 4 spaces (or tab) to make a sub-list
+        1. keep indenting for more sub lists
+    * here i'm back to the second level
 
-```java
-('Hello, world')
-```
+To start a check list, write this:
 
-```java
-# А что же тут будет написано
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+- [ ] this is not checked
+- [ ] this is too
+- [x] but this is checked
++ тест
+<ul>
+<li>создание сервисов
+<li>просмотр статистики платежей
+<li>создание ссылок/кнопок/QR-кодов для оплаты
+<li>инициализация и контроль возвратов
+<li>создание и просмотр запросов в техническую поддержку Банка
+</ul>
+    
+Доступ в <a href='https://home.rficb.ru/'>личный кабинет</a> осуществляется по логину и паролю, который вы получите в процессе интеграции
+
+## Создание сервиса
+
+Создание сервиса важный этап интеграции. На одном логине может создано до 10 сервисов. Каждый сервис имеет свои насртойки и набор параметров. 
+
+    <aside class="notice">
+        Количество сервисов может быть увеличено по запросу в технчиескую поддержку
+    </aside>
 
 
 > Сервис Вы можете создать в [личном кабинете интернет-эквайринга](https://home.rficb.ru).
