@@ -228,7 +228,7 @@
             <a href="#2e07b54bdc" class="toc-h1 toc-link" data-title="Личный кабинет интернет-эквайринга">Личный кабинет интернет-эквайринга</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#ad4ae069ec" class="toc-h2 toc-link" data-title="Создание сервиса">Создание сервиса</a>
+                    <a href="#b4b55e3a67" class="toc-h2 toc-link" data-title="Создание и настройка сервиса">Создание и настройка сервиса</a>
                   </li>
               </ul>
           </li>
@@ -252,7 +252,7 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='https://home.rficb.ru/'>Личный кабинет интернет-эквайринга</a></li>
-            <li><a href='https://github.com/RFIBANK/'>Наш репозиторий</a></li>
+            <li><a href='https://github.com/RFIBANK/'>Репозиторий</a></li>
             <li><a href='https://github.com/lord/slate'>Powered by Slate</a></li>
         </ul>
     </div>
@@ -263,101 +263,24 @@
 <p>Добро пожаловать на главную страницу технической документации РФИ Банка.
 Здесь вы найдете необходимую информаци о взаимодействии сервисов партнера и Банка.</p>
 <h1 id='2e07b54bdc'>Личный кабинет интернет-эквайринга</h1>
-<p>В личном кабинете собраны различные инструменты:
-1. this starts a list <em>with</em> numbers
-+  this will show as number &quot;2&quot;
-*  this will show as number &quot;3.&quot;
-9. any number, +, -, or * will keep the list going.
-    * just indent by 4 spaces (or tab) to make a sub-list
-        1. keep indenting for more sub lists
-    * here i&#39;m back to the second level
-* an asterisk starts an unordered list
-* and this is another item in the list
-+ or you can also use the + character
-- or the - character</p>
-
-<p>To start an ordered list, write this:</p>
-
-<ol>
-<li>this starts a list <em>with</em> numbers</li>
-<li> this will show as number &quot;2&quot;</li>
-<li> this will show as number &quot;3.&quot;</li>
-<li>any number, +, -, or * will keep the list going.
+<p>В личном кабинете собраны различные инструменты:</p>
 
 <ul>
-<li>just indent by 4 spaces (or tab) to make a sub-list
-
-<ol>
-<li>keep indenting for more sub lists</li>
-</ol></li>
-<li>here i&#39;m back to the second level</li>
-</ul></li>
-</ol>
-
-<p>To start a check list, write this:</p>
-
-<ul>
-<li>[ ] this is not checked</li>
-<li>[ ] this is too</li>
-<li>[x] but this is checked</li>
-<li>тест
-<ul>
-<li>создание сервисов
-<li>просмотр статистики платежей
-<li>создание ссылок/кнопок/QR-кодов для оплаты
-<li>инициализация и контроль возвратов
-<li>создание и просмотр запросов в техническую поддержку Банка
-</ul></li>
+<li>создание сервисов</li>
+<li>просмотр статистики платежей</li>
+<li>создание ссылок/кнопок/QR-кодов для оплаты</li>
+<li>инициализация и контроль возвратов</li>
+<li>создание и просмотр запросов в техническую поддержку Банка</li>
 </ul>
 
-<p>Доступ в <a href='https://home.rficb.ru/'>личный кабинет</a> осуществляется по логину и паролю, который вы получите в процессе интеграции</p>
-<h2 id='ad4ae069ec'>Создание сервиса</h2>
-<p>Создание сервиса важный этап интеграции. На одном логине может создано до 10 сервисов. Каждый сервис имеет свои насртойки и набор параметров. </p>
+<p>Доступ в <a href='https://home.rficb.ru/'>ЛК</a> осуществляется по логину и паролю, который вы получите в процессе интеграции</p>
+<h2 id='b4b55e3a67'>Создание и настройка сервиса</h2>
+<p>Создание сервиса важный этап интеграции. На одном логине может быть создано до 10 сервисов, каждый из них имеет свои настройки и набор параметров. Статистика платежей отображается для логина в целом</p>
 
 <p><aside class="notice">
         Количество сервисов может быть увеличено по запросу в технчиескую поддержку
     </aside></p>
-
-<blockquote>
-<p>Сервис Вы можете создать в <a href="https://home.rficb.ru">личном кабинете интернет-эквайринга</a>.</p>
-</blockquote>
-
-<aside class="notice">
-Тестовое наполнение <code>meowmeowmeow</code>.
-</aside>
-<h1 id='webhook'>Webhook нотификации</h1><h2 id='a4b44365ab'>Стандартные параметры</h2><pre class="highlight php tab-php"><code>require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">curl</span> <span class="s">"http://example.com/api/kittens"</span>
-  <span class="o">-</span><span class="n">H</span> <span class="s">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<blockquote>
-<p>Возвращается JSON:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>Тест-тест-тест.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h1 id='webhook'>Webhook нотификации</h1><h2 id='a4b44365ab'>Стандартные параметры</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://partner.rficb.ru</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
