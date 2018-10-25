@@ -9,3 +9,6 @@ gem 'middleman-sprockets', '~> 4.1.0'
 gem 'rouge', '~> 2.0.5'
 gem 'redcarpet', '~> 3.4.0'
 gem 'nokogiri', '~> 1.8.2'
+
+# Added at 2018-10-25 19:44:32 +0800 by root:
+gem "fast_blank", "~> 1.0"

@@ -114,6 +114,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fast_blank (~> 1.0)
   middleman (~> 4.2.1)
   middleman-autoprefixer (~> 2.7.0)
   middleman-sprockets (~> 4.1.0)
@@ -126,4 +127,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.15.4
+   1.17.0
