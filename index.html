@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;php&quot;,&quot;java&quot;,&quot;python&quot;,&quot;json&quot;]">
+  <body class="index" data-languages="[&quot;php&quot;,&quot;java&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -214,7 +214,6 @@
               <a href="#" data-language-name="php">PHP</a>
               <a href="#" data-language-name="java">Java</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="json">JSON</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Поиск">
@@ -225,10 +224,10 @@
             <a href="#3394112aa9" class="toc-h1 toc-link" data-title="Введение">Введение</a>
           </li>
           <li>
-            <a href="#2e07b54bdc" class="toc-h1 toc-link" data-title="Личный кабинет интернет-эквайринга">Личный кабинет интернет-эквайринга</a>
+            <a href="#a8016fb95b" class="toc-h1 toc-link" data-title="Личный кабинет">Личный кабинет</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#b4b55e3a67" class="toc-h2 toc-link" data-title="Создание и настройка сервиса">Создание и настройка сервиса</a>
+                    <a href="#b2f66e7260" class="toc-h2 toc-link" data-title="Сервисы">Сервисы</a>
                   </li>
               </ul>
           </li>
@@ -238,11 +237,13 @@
                   <li>
                     <a href="#a4b44365ab" class="toc-h2 toc-link" data-title="Стандартные параметры">Стандартные параметры</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#43dc788e63" class="toc-h1 toc-link" data-title="Формирование подписи">Формирование подписи</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#v2-0" class="toc-h2 toc-link" data-title="Подпись v2.0">Подпись v2.0</a>
                   </li>
               </ul>
           </li>
@@ -251,7 +252,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://home.rficb.ru/'>Личный кабинет интернет-эквайринга</a></li>
+            <li><a href='https://home.rficb.ru/'>Личный кабинет</a></li>
             <li><a href='https://github.com/RFIBANK/'>Репозиторий</a></li>
             <li><a href='https://github.com/lord/slate'>Powered by Slate</a></li>
         </ul>
@@ -262,7 +263,7 @@
         <h1 id='3394112aa9'>Введение</h1>
 <p>Добро пожаловать на главную страницу технической документации РФИ Банка.
 Здесь вы найдете необходимую информаци о взаимодействии сервисов партнера и Банка.</p>
-<h1 id='2e07b54bdc'>Личный кабинет интернет-эквайринга</h1>
+<h1 id='a8016fb95b'>Личный кабинет</h1>
 <p>В личном кабинете собраны различные инструменты:</p>
 
 <ul>
@@ -274,120 +275,203 @@
 </ul>
 
 <p>Доступ в <a href='https://home.rficb.ru/'>ЛК</a> осуществляется по логину и паролю, который вы получите в процессе интеграции</p>
-<h2 id='b4b55e3a67'>Создание и настройка сервиса</h2>
-<p>Создание сервиса важный этап интеграции. На одном логине может быть создано до 10 сервисов, каждый из них имеет свои настройки и набор параметров. Статистика платежей отображается для логина в целом</p>
+<h2 id='b2f66e7260'>Сервисы</h2>
+<p>На одном логине может быть создано до 10 сервисов, каждый из них имеет свои настройки и набор параметров. Статистика платежей отображается для логина в целом</p>
 
 <p><aside class="notice">
-        Количество сервисов может быть увеличено по запросу в технческую поддержку. Текущий лимит указан в разделе Инструменты &gt; Сервисы
+        Количество сервисов может быть увеличено по запросу в технческую поддержку. Текущий лимит указан в разделе <strong>Инструменты</strong> &gt; <strong>Сервисы</strong>
     <img src="images/service_rest.PNG" alt="Количество сервисов на аккаунте" />
     </aside></p>
-<h1 id='webhook'>Webhook нотификации</h1><h2 id='a4b44365ab'>Стандартные параметры</h2><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://partner.rficb.ru</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<h3 id='b4b55e3a67'>Создание и настройка сервиса</h3>
+<p>Для создания сервиса перейдите в раздел <strong>Инструменты</strong> &gt; <strong>Сервисы</strong> и нажмите кнопку <em>Добавить сервис</em>. Откроется страница создания нового сервиса
+<img src="images/service_add.png" alt="Добавление нового сервиса в A1lite" /></p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Описание полей:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<ul>
+<li><strong>Название сервиса</strong> – название, которое будет отображаться в списке ваших сервисов. Название, которое Вы введёте, будет отображаться в платёжном окне как «Продавец».</li>
+<li><strong>URL скрипта обработчика на Вашем сайте</strong> – обработчик – это скрипт, которому передаётся информация о принятых платежах от системы Банка. Именно скрипт обработчика далее должен реализовывать логику (генерация кода, выдача товара, открытие доступа и т.д.). Если Вам не требуется выполнение действий, связанных с учётом денег, то скрипт обработчика можно не указывать.</li>
+<li><strong>URL страницы успешной покупки</strong> – страница, на которую будет переадресовываться пользователь после успешной оплаты с передачей всех параметров платежа.</li>
+<li><strong>URL страницы ошибки</strong> – страница, на которую будет переадресовываться пользователь, если во время проведения платежа возникла ошибка.</li>
+<li><strong>Секретный ключ сервиса</strong> – ключ, по которому вы сможете подтверждать достоверность передаваемых данных. Если Вы указали адрес скрипта обработчика обязательно укаэите секретный ключ.</li>
+<li><strong>Email</strong> – укажите Ваш email, если хотите получать уведомления о поступающих платежах.</li>
+<li><strong>При платеже обязательно указывать</strong> – если Вам необходимо получать от пользователей email или телефон (чтобы прислать логин и пароль, уведомить и т.д.), то с помощью этого параметра Вы можете сделать эти поля обязательными для заполнения.</li>
+<li><strong>Способы оплаты</strong> – выберете способы оплаты, которые вы хотите предлагать вашим клиентам.</li>
+</ul>
+<h1 id='webhook'>Webhook нотификации</h1><h2 id='a4b44365ab'>Стандартные параметры</h2><h1 id='43dc788e63'>Формирование подписи</h1><h2 id='v2-0'>Подпись v2.0</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Пример формирования подписи v2.0</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span><span class="p">,</span><span class="n">quote</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">hmac</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="s">'check'</span><span class="p">,</span> <span class="s">'mac'</span><span class="p">]):</span>
+    <span class="s">"""
+    Типовой метод для подписи HTTP запросов
+    """</span>
+    <span class="n">url_parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span> <span class="k">if</span> <span class="n">param</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">]</span>
+    <span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">or</span> <span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span>
+            <span class="n">safe</span><span class="o">=</span><span class="s">'~'</span>
+        <span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'{}={}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+        <span class="n">method</span><span class="p">,</span>
+        <span class="n">url_parsed</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span>
+        <span class="n">url_parsed</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+        <span class="s">"&amp;"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">])</span>
+    <span class="n">secrkey</span> <span class="o">=</span> <span class="n">secret_key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="n">mesg</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">secrkey</span><span class="p">,</span><span class="n">mesg</span><span class="p">)</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">secrkey</span><span class="p">,</span>
+        <span class="n">mesg</span><span class="p">,</span>
+        <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">signature</span>
+<span class="o">//</span><span class="err">Пример</span> <span class="err">вызова</span><span class="p">,</span> <span class="err">где</span> <span class="err">$</span><span class="n">req</span> <span class="o">-</span> <span class="err">массив</span> <span class="err">с</span> <span class="err">параметрами</span> <span class="err">транзакции</span><span class="p">:</span>
+<span class="n">sign</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://partner.rficb.ru/alba/input/"</span><span class="p">,</span> <span class="p">{</span><span class="s">'login'</span><span class="p">:</span> <span class="s">'newlogin~_-.'</span><span class="p">},</span> <span class="s">'165165165sd'</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">rficb</span><span class="o">.</span><span class="na">alba</span><span class="o">;</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kn">import</span> <span class="nn">java.io.UnsupportedEncodingException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URLEncoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.Charset</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.InvalidKeyException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URI</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URISyntaxException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.bind.DatatypeConverter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AlbaSigner</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">sign</span><span class="o">(</span><span class="n">String</span> <span class="n">method</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">params</span><span class="o">,</span> <span class="n">String</span> <span class="n">secretKey</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">URISyntaxException</span><span class="o">,</span> <span class="n">UnsupportedEncodingException</span><span class="o">,</span> <span class="n">NoSuchAlgorithmException</span><span class="o">,</span> <span class="n">InvalidKeyException</span> <span class="o">{</span>
+
+        <span class="n">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URI</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+
+        <span class="n">List</span> <span class="n">keys</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">params</span><span class="o">.</span><span class="na">keySet</span><span class="o">());</span>
+        <span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">keys</span><span class="o">);</span>
+
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">key:</span> <span class="n">keys</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&amp;"</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s=%s"</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="s">"UTF-8"</span><span class="o">)));</span>
+        <span class="o">}</span>
+        <span class="n">String</span> <span class="n">urlParameters</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span> <span class="o">+</span>
+                <span class="n">uri</span><span class="o">.</span><span class="na">getHost</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span> <span class="o">+</span>
+                <span class="n">uri</span><span class="o">.</span><span class="na">getPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span> <span class="o">+</span>
+                <span class="n">urlParameters</span><span class="o">;</span>
+
+        <span class="n">Mac</span> <span class="n">hmacInstance</span> <span class="o">=</span> <span class="n">Mac</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="n">Charset</span> <span class="n">charSet</span> <span class="o">=</span> <span class="n">Charset</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+        <span class="n">SecretKeySpec</span> <span class="n">keySpec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">javax</span><span class="o">.</span><span class="na">crypto</span><span class="o">.</span><span class="na">spec</span><span class="o">.</span><span class="na">SecretKeySpec</span><span class="o">(</span><span class="n">charSet</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">secretKey</span><span class="o">).</span><span class="na">array</span><span class="o">(),</span> <span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="n">hmacInstance</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">keySpec</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">DatatypeConverter</span><span class="o">.</span><span class="na">printBase64Binary</span><span class="o">(</span><span class="n">hmacInstance</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">)));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+ <span class="k">function</span> <span class="nf">http_build_query_rfc_3986</span><span class="p">(</span><span class="nv">$queryData</span><span class="p">,</span> <span class="nv">$argSeparator</span><span class="o">=</span><span class="s1">'&amp;'</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$r</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="nv">$queryData</span> <span class="o">=</span> <span class="p">(</span><span class="k">array</span><span class="p">)</span> <span class="nv">$queryData</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$queryData</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="nv">$queryData</span> <span class="k">as</span> <span class="nv">$k</span><span class="o">=&gt;</span><span class="nv">$queryVar</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="nv">$r</span> <span class="o">.=</span> <span class="nv">$argSeparator</span><span class="o">.</span><span class="nv">$k</span><span class="o">.</span><span class="s1">'='</span><span class="o">.</span><span class="nb">rawurlencode</span><span class="p">(</span><span class="nv">$queryVar</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$r</span><span class="p">,</span><span class="nv">$argSeparator</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="nf">sign</span><span class="p">(</span><span class="nv">$method</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span><span class="p">,</span> <span class="nv">$secretKey</span><span class="p">,</span> <span class="nv">$skipPort</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">ksort</span><span class="p">(</span><span class="nv">$params</span><span class="p">,</span> <span class="nx">SORT_LOCALE_STRING</span><span class="p">);</span>
+
+        <span class="nv">$urlParsed</span> <span class="o">=</span> <span class="nb">parse_url</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+        <span class="nv">$path</span> <span class="o">=</span> <span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'path'</span><span class="p">];</span>
+        <span class="nv">$host</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'host'</span><span class="p">])</span><span class="o">?</span> <span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'host'</span><span class="p">]</span><span class="o">:</span> <span class="s2">""</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'port'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'port'</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">80</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$skipPort</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$host</span> <span class="o">.=</span> <span class="s2">":</span><span class="si">{</span><span class="nv">$urlParsed</span><span class="p">[</span><span class="s1">'port'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nv">$method</span> <span class="o">=</span> <span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$method</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'POST'</span><span class="o">?</span> <span class="s1">'POST'</span><span class="o">:</span> <span class="s1">'GET'</span><span class="p">;</span>
+
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="nv">$method</span><span class="p">,</span>
+                <span class="nv">$host</span><span class="p">,</span>
+                <span class="nv">$path</span><span class="p">,</span>
+                <span class="nx">http_build_query_rfc_3986</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="nv">$signature</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span>
+            <span class="nb">hash_hmac</span><span class="p">(</span><span class="s2">"sha256"</span><span class="p">,</span>
+                <span class="s2">"</span><span class="si">{</span><span class="nv">$data</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="s2">"</span><span class="si">{</span><span class="nv">$secretKey</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="k">TRUE</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$signature</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="c1">// Пример вызова, где $req - массив с параметрами транзакции:
+</span><span class="nx">sign</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"https://partner.rficb.ru/alba/input/"</span><span class="p">,</span> <span class="nv">$req</span><span class="p">,</span> <span class="s1">'secret'</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+<p>Создать нормализованную строку запроса:</p>
+
+<ol>
+<li>Отсортировать параметры по имени в кодировке <strong>Utf-8</strong>, сравнивая побайтово. Параметры берутся из GET URI или из тела POST запроса (когда Content­Type равен application/x­www­form­urlencoded)</li>
+<li>Кодировать имена и значения параметров по следующим правилам:
+
+<ul>
+<li>не кодировать определённые в <strong>RFC 3986</strong> незарезервированные символы. Эти символы: A-Z, a-z, 0-9, минус (-), подчёркивание (_), точка (.) и тильда (~).</li>
+<li>все остальные символы должны быть закодированы как %XY, где X и Y это шестнадцатеричные символы от 0 до 9 и от A до F (заглавные). Расширенные <strong>Utf-8</strong> символы кодируются как %XY%ZA.</li>
+<li>пробел кодируется как %20 (не как +, как обычно делается в URL).</li>
+<li>кодированные имена параметров отделяются от кодированных значений знаком равно (=, <strong>ASCII</strong>­код 61), даже если параметр имеет пустое значение.</li>
+<li>пары имя–значение разделяются символом амперсанда (&amp;, <strong>ASCII</strong> код 38).</li>
+</ul></li>
+<li>Создать строку для подписи в соответствии со следующей псевдо грамматикой (где “\n” это <strong>ASCII</strong> – символов перевода строки):
+
+<ul>
+<li>StringToSign = HTTPVerb + &quot;\n&quot; +</li>
+<li>ValueOfHostHeaderInLowercase + &quot;\n&quot; +</li>
+<li>HTTPRequestURI + &quot;\n&quot; +</li>
+<li>CanonicalizedQueryString</li>
+</ul></li>
+<li>Рассчитать совместимый с RFC 2104 HMAC по только что созданной строке StringToSign, используя секретный ключ партёра как ключ алгоритма, и SHA256 как способ хэширования.</li>
+<li>Сконвертировать полученную подпись в base64.</li>
+</ol>
+
+<p>Использовать результат как значение как check.</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
@@ -453,7 +537,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
                 <a href="#" data-language-name="php">PHP</a>
                 <a href="#" data-language-name="java">Java</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="json">JSON</a>
           </div>
       </div>
     </div>
