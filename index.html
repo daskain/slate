@@ -199,9 +199,10 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+	<link href="images/favicon.png" rel="icon" type="image/png" />
   </head>
 
-  <body class="index" data-languages="[&quot;php&quot;,&quot;java&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;html&quot;,&quot;php&quot;,&quot;java&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,9 +212,10 @@
     <div class="toc-wrapper">
       <img src="images/logo_white_new.png" class="logo" alt="Logo white new" />
         <div class="lang-selector">
+              <a href="#" data-language-name="html">HTML</a>
               <a href="#" data-language-name="php">PHP</a>
               <a href="#" data-language-name="java">Java</a>
-              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="python">Python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Поиск">
@@ -227,7 +229,10 @@
             <a href="#a8016fb95b" class="toc-h1 toc-link" data-title="Личный кабинет">Личный кабинет</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#e69b222112" class="toc-h2 toc-link" data-title="Настройки профиля">Настройки профиля</a>
+                    <a href="#22d41fd43e" class="toc-h2 toc-link" data-title="Способ оплаты">Способ оплаты</a>
+                  </li>
+                  <li>
+                    <a href="#86bdb3f262" class="toc-h2 toc-link" data-title="Настройка профиля">Настройка профиля</a>
                   </li>
                   <li>
                     <a href="#b2f66e7260" class="toc-h2 toc-link" data-title="Сервисы">Сервисы</a>
@@ -270,26 +275,125 @@
 <p>В личном кабинете собраны различные инструменты:</p>
 
 <ul>
-<li>создание сервисов</li>
-<li>просмотр статистики платежей</li>
-<li>создание ссылок/кнопок/QR-кодов для оплаты</li>
-<li>инициализация и контроль возвратов</li>
-<li>создание и просмотр запросов в техническую поддержку Банка</li>
+<li>настройки профиля;</li>
+<li>создание сервисов;</li>
+<li>просмотр статистики платежей;</li>
+<li>создание ссылок/кнопок/QR-кодов для оплаты;</li>
+<li>инициализация и контроль возвратов;</li>
+<li>создание и просмотр запросов в техническую поддержку Банка.</li>
 </ul>
 
 <p>Доступ в <a href='https://home.rficb.ru/'>ЛК</a> осуществляется по логину и паролю, который вы получите в процессе интеграции.</p>
-<h2 id='e69b222112'>Настройки профиля</h2>
+<h2 id='22d41fd43e'>Способ оплаты</h2>
+<table><thead>
+<tr>
+<th>Название</th>
+<th>Описание</th>
+<th>Назначение</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CRM модуль</td>
+<td>Встраиваемый модуль</td>
+<td>Если ваш сайт использует какую либо CRM систему, используя готовые модули можно подключить оплату в очень короткие сроки</td>
+</tr>
+<tr>
+<td>QR код</td>
+<td>Ссылка на динамическое графическое изображение (QR код)</td>
+<td>Размещение QR кода online на веб сайтах или offline на любых физических носителях</td>
+</tr>
+<tr>
+<td>Внешний API</td>
+<td>Вебсервис для инициации платежной операции</td>
+<td>Данный способ подходит для ТСП формирующих выбор способа оплаты самостоятельно. При использовании данного механизма можно сформировать платежную транзакцию без отображения страниц платежной системы</td>
+</tr>
+<tr>
+<td>Всплывающее окно (виджет)</td>
+<td>HTML форма + JS</td>
+<td>Данное решение полезно, если Вы не хотите, чтобы пользователь уходил с Вашего сайта. Виджет открывается на фоне основного сайта</td>
+</tr>
+<tr>
+<td>Кнопка</td>
+<td>HTML форма с данными необходимыми для проведения оплаты</td>
+<td>Использование на сайтах собственной разработки. В поля HTML формы можно передавать собственные параметры платежа (сумму, назначение и др.)</td>
+</tr>
+<tr>
+<td>Ссылка (короткая ссылка)</td>
+<td>URL или ShortenURL, после перехода по которой отображается форма выбора способа оплаты.</td>
+<td>Отправка ссылок на оплату через любые системы обмена сообщениями. В параметрах URL можно динамически менять параметры платежной транзакции.</td>
+</tr>
+</tbody></table>
+<h3 id='3e69ba4f35'>Направление на определенный способ оплаты</h3>
 <blockquote>
-<p><img src="images/proh_lk.png" alt="Настройки профиля" /></p>
+<p>Форма оплаты</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span>  <span class="na">class=</span><span class="s">"application"</span>  <span class="na">accept-charset=</span><span class="s">"UTF-8"</span> <span class="na">action=</span><span class="s">"https://partner.rficb.ru/alba/input/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"key"</span> <span class="na">value=</span><span class="s">"b5/uqup/i/ueWBrRyp9V0n97zyHty5YtV5u/NW27nlk="</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"cost"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">value=</span><span class="s">"Название услуги или сервиса"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"phone_number"</span> <span class="na">value=</span><span class="s">"74951234567"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">value=</span><span class="s">"customer@site.ru"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"payment_type"</span> <span class="na">value=</span><span class="s">"spg"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"verbose"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"order_id"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">style=</span><span class="s">"border:0;"</span> <span class="na">src=</span><span class="s">"https://partner.rficb.ru/gui/images/a1lite_buttons/button_large.png"</span> <span class="na">value=</span><span class="s">"Оплатить"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+<th>Примечание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_type</td>
+<td>тип оплаты, на который должен быть отправлен плательщик</td>
+<td>значения параметра представлены в таблице ниже</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>телефонный номер плательщика</td>
+<td>74951234567</td>
+</tr>
+<tr>
+<td>verbose <code>1/0</code></td>
+<td>что делать в случае возникновения ошибки, если нет данных о пользователе (e-mail или телефона для способов платежа, где они обязательны)</td>
+<td>1 – показывать ошибку, 0 – показывать страницу выбора способа оплаты</td>
+</tr>
+<tr>
+<td>email</td>
+<td>электронная почта клиента</td>
+<td>поле обязательно для рекуррентных платежей, для остальных вариантов оплаты необходимость ввода регулируется в настройках сервиса</td>
+</tr>
+</tbody></table>
+<h2 id='86bdb3f262'>Настройка профиля</h2><h3 id='da6a620b96'>Смена пароля</h3>
+<blockquote>
+<p>Смена пароля</p>
+
+<p><img src="images/property_lk_pass1.png" alt="Смена пароля" /></p>
 </blockquote>
 
-<p>В разделе <strong>Мой аккаунт</strong> &gt; <strong>Профиль</strong> можно изменить пароль, а так-же указать контактные данные (номер телефона/e-mail) которые будут использоваться для обратной связи.
-E-mail может быть использован для получения дополнительной информации:</p>
+<p>В разделе <strong>Мой аккаунт</strong> &gt; <strong>Профиль</strong> можно изменить пароль и установить автоматическую смену пароля. После прошествия 30 дней система предложить имзенить пароль к ЛК.</p>
+<h3 id='21895bd03e'>Контактные данные</h3>
+<blockquote>
+<p>Настройка профиля</p>
+
+<p><img src="images/property_lk_contact.png" alt="Настройки профиля" /></p>
+</blockquote>
+
+<p>Вы можете указать контактные указать контактные данные (номер телефона/e-mail) которые будут использоваться для обратной связи.</p>
+
+<blockquote>
+<p><img src="images/property_lk_other.png" alt="Дополнительная информация" /></p>
+</blockquote>
+<h3 id='d12bd15d2d'>Получение дополнительной информации</h3>
+<p>E-mail может быть использован для получения дополнительной информации:</p>
 
 <ul>
 <li><strong>Я согласен получать на свой E-mail информационную рассылку системы АО «РФИ Банк»</strong> - получать информационную рассылку от Банка о проводящихся работах, новом функционале и т.п.</li>
 <li><strong>Отправлять ежедневную статистику</strong> - ежедневно получать статистику по прошедшим транзакциям за предыдущие сутки.</li>
-<li><strong>Уведомлять при ошибках нотификаций по E-mail</strong> - если по каким-либо транзакциям до обработчика не были доставлены нотификации, то на указанный e-mail придет письмо, содержащее код ошибки и полный текст нотификации. Подробнее о нотификациях можно прочитать [тут]( Я согласен получать на свой E-mail информационную рассылку системы АО «РФИ Банк» - если хотите получать информационную рассылку от РФИ БАНКа о проводящихся работах, новом функционал и т.п. Подробнее о нотификациях и обработчике можно прочитать <a href="./#webhook">тут</a></li>
+<li><strong>Уведомлять при ошибках нотификаций по E-mail</strong> - если по каким-либо транзакциям до обработчика не были доставлены нотификации, то на указанный e-mail придет письмо, содержащее код ошибки и полный текст нотификации. Подробнее о нотификациях можно прочитать <a href="./#webhook">тут</a></li>
 </ul>
 <h2 id='b2f66e7260'>Сервисы</h2>
 <p>На одном логине может быть создано до 10 сервисов, каждый из них имеет свои настройки и набор параметров. Статистика платежей отображается для логина в целом</p>
@@ -474,19 +578,19 @@ E-mail может быть использован для получения до
 <li>Кодировать имена и значения параметров по следующим правилам:
 
 <ul>
-<li>не кодировать определённые в <strong>RFC 3986</strong> незарезервированные символы. Эти символы: A-Z, a-z, 0-9, минус (-), подчёркивание (_), точка (.) и тильда (~).</li>
-<li>все остальные символы должны быть закодированы как %XY, где X и Y это шестнадцатеричные символы от 0 до 9 и от A до F (заглавные). Расширенные <strong>Utf-8</strong> символы кодируются как %XY%ZA.</li>
-<li>пробел кодируется как %20 (не как +, как обычно делается в URL).</li>
+<li>не кодировать определённые в стандарте <strong>RFC 3986</strong> незарезервированные символы. Эти символы: <strong>A-Z</strong>, <strong>a-z</strong>, <strong>0-9</strong>, минус (<strong>-</strong>), подчёркивание (<strong>_</strong>), точка (<strong>.</strong>) и тильда (<strong>~</strong>).</li>
+<li>все остальные символы должны быть закодированы как <strong>%XY</strong>, где <strong>X</strong> и <strong>Y</strong> это шестнадцатеричные символы от <strong>0</strong> до <strong>9</strong> и от <strong>A</strong> до <strong>F</strong> (заглавные). Расширенные <strong>Utf-8</strong> символы кодируются как <strong>%XY%ZA</strong>.</li>
+<li>пробел кодируется как <strong>%20</strong> (не как +, как обычно делается в URL).</li>
 <li>кодированные имена параметров отделяются от кодированных значений знаком равно (=, <strong>ASCII</strong> код 61), даже если параметр имеет пустое значение.</li>
 <li>пары имя–значение разделяются символом амперсанда (&amp;, <strong>ASCII</strong> код 38).</li>
 </ul></li>
-<li>Создать строку для подписи в соответствии со следующей псевдо грамматикой (где “\n” это <strong>ASCII</strong> символ перевода строки):
+<li>Создать строку для подписи в соответствии со следующей псевдо грамматикой (где “\n” это <strong>ASCII</strong> символ перевода строки), <strong>StringToSign</strong> = :
 
 <ul>
-<li>StringToSign = HTTPVerb + &quot;\n&quot; +</li>
-<li>ValueOfHostHeaderInLowercase + &quot;\n&quot; +</li>
-<li>HTTPRequestURI + &quot;\n&quot; +</li>
-<li>CanonicalizedQueryString</li>
+<li><strong>HTTPVerb</strong> - метод <strong>POST</strong>, <strong>GET</strong>, <strong>PUT</strong> или <strong>DELETE</strong>.&#39;+ &quot;\n&quot; +&#39;</li>
+<li><strong>ValueOfHostHeaderInLowercase</strong> - параметр <strong>host</strong> из заголовка <strong>HTTP</strong>-запроса.&#39;+ &quot;\n&quot; +&#39;</li>
+<li><strong>HTTPRequestURI</strong> - компонент <strong>URI</strong>, абсолютный путь до (не включая <strong>GET</strong>­-параметров). Для пустого пути ожидается &#39;/&#39;. &#39;+ &quot;\n&quot; +&#39;</li>
+<li><strong>CanonicalizedQueryString</strong> (строка из шага 2).</li>
 </ul></li>
 <li>Рассчитать <strong>HMAC</strong>, совместимый со стандартом <strong>RFC 2104</strong>, по только что созданной строке <em>StringToSign</em>, используя секретный ключ партнёра (<em>ключ алгоритма</em>) и <strong>SHA256</strong> (<em>способ хэширования</em>).</li>
 <li>Сконвертировать полученную подпись в <strong>base64</strong>.</li>
@@ -555,9 +659,10 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
+                <a href="#" data-language-name="html">HTML</a>
                 <a href="#" data-language-name="php">PHP</a>
                 <a href="#" data-language-name="java">Java</a>
-                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="python">Python</a>
           </div>
       </div>
     </div>
