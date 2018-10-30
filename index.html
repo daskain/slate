@@ -229,7 +229,7 @@
             <a href="#a8016fb95b" class="toc-h1 toc-link" data-title="Личный кабинет">Личный кабинет</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#22d41fd43e" class="toc-h2 toc-link" data-title="Способ оплаты">Способ оплаты</a>
+                    <a href="#cb0d8b25a3" class="toc-h2 toc-link" data-title="Инициализация платежа">Инициализация платежа</a>
                   </li>
                   <li>
                     <a href="#86bdb3f262" class="toc-h2 toc-link" data-title="Настройка профиля">Настройка профиля</a>
@@ -284,7 +284,99 @@
 </ul>
 
 <p>Доступ в <a href='https://home.rficb.ru/'>ЛК</a> осуществляется по логину и паролю, который вы получите в процессе интеграции.</p>
-<h2 id='22d41fd43e'>Способ оплаты</h2>
+<h2 id='cb0d8b25a3'>Инициализация платежа</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span>  <span class="na">class=</span><span class="s">"application"</span>  <span class="na">accept-charset=</span><span class="s">"UTF-8"</span> <span class="na">action=</span><span class="s">"https://partner.rficb.ru/alba/input/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"key"</span> <span class="na">value=</span><span class="s">"b5/uqup/i/ueWBrRyp9V0n97zyHty5YtV5u/NW27nlk=”/&gt;
+&lt;input type="</span><span class="na">hidden</span><span class="err">"</span> <span class="na">name=</span><span class="s">"cost"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">value=</span><span class="s">"Название услуги или сервиса"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">value=</span><span class="s">"customer@site.ru"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"order_id"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">style=</span><span class="s">"border:0;"</span> <span class="na">src=</span><span class="s">"https://partner.rficb.ru/gui/images/alba_buttons/button_large.png"</span> <span class="na">value=</span><span class="s">"Оплатить"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+<p>Инициализация платежа осу</p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Версия API</th>
+<th>Описание</th>
+<th>Примечание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>1.0</td>
+<td>Ключ (идентификатор сервиса), присваиваемый системой при создании кнопки из ЛК</td>
+<td>“b5/uqup/i/ueWBrRyp9V0n97zyHty5YtV5u/NW27nlk=</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>1.0, 2.0</td>
+<td>Сумма оплаты, в рублях</td>
+<td>100</td>
+</tr>
+<tr>
+<td>name</td>
+<td>1.0, 2.0</td>
+<td>Описание товара/услуги. Отображается на странице оплаты. Максимальная длина 128 символов.</td>
+<td>Заказ №212</td>
+</tr>
+<tr>
+<td>email</td>
+<td>1.0, 2.0</td>
+<td>Электронная почта плательщика. Поле обязательно для рекуррентных платежей. В иных случаях небходимость обязательного заполнения поля регулируется в настройках сервиса.</td>
+<td>customer@site.ru</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>1.0, 2.0</td>
+<td>Номер телефона плательщика. Необходимость обязательного заполнения поля регулируется в настройках сервиса и параметрах платежного канала</td>
+<td>74951234567</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>1.0, 2.0</td>
+<td>Цифровое поле (обязательное). Номер заказа в системе партнера, должен быть уникальным. Дважды заказ с одинаковым order_id оплатить не удастся. Если нет необходимости определять каждый заказ, то значение order_id нужно сделать равным 0. Максимальная длина 64 символа. Для рекуррентных платежей длина должна быть не менее 6 символов.</td>
+<td>100001</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>1.0, 2.0</td>
+<td>Текстовое поле. Можно передавать любую свою информацию. Информация переданная в данном параметре не отображается на странице оплаты и может использоваться для внутренних нужд магазина.</td>
+<td>Максимальная длина 512 символов</td>
+</tr>
+<tr>
+<td>invoice_data</td>
+<td>1.0, 2.0</td>
+<td>Данные в формате <strong>JSON</strong> для фискального чека (см. API для АТОЛ)</td>
+<td>htmlspecialchars JSON</td>
+</tr>
+<tr>
+<td>custom_fields</td>
+<td>1.0, 2.0</td>
+<td>Опциональный параметр. Предназначен для передачи дополнительной информации в различные каналы оплаты</td>
+<td>urlencoded словарь JSON</td>
+</tr>
+<tr>
+<td>check</td>
+<td>2.0</td>
+<td>Электронная подпись запроса.</td>
+<td>Обязательна передача параметра version=’2.0’ и service_id. Параметр key в данном случае не требуется.</td>
+</tr>
+<tr>
+<td>service_id</td>
+<td>2.0</td>
+<td>Идентификатор сервиса, обязательно для версии 2.0</td>
+<td>121233</td>
+</tr>
+<tr>
+<td>version</td>
+<td>2.0</td>
+<td>Строка Версия API</td>
+<td></td>
+</tr>
+</tbody></table>
+
 <table><thead>
 <tr>
 <th>Название</th>
@@ -325,7 +417,7 @@
 </tbody></table>
 <h3 id='3e69ba4f35'>Направление на определенный способ оплаты</h3>
 <blockquote>
-<p>Форма оплаты</p>
+<p>Оплата банковской картой (spg)</p>
 </blockquote>
 <pre class="highlight html tab-html"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span>  <span class="na">class=</span><span class="s">"application"</span>  <span class="na">accept-charset=</span><span class="s">"UTF-8"</span> <span class="na">action=</span><span class="s">"https://partner.rficb.ru/alba/input/"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"key"</span> <span class="na">value=</span><span class="s">"b5/uqup/i/ueWBrRyp9V0n97zyHty5YtV5u/NW27nlk="</span><span class="nt">/&gt;</span>
@@ -339,6 +431,8 @@
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">style=</span><span class="s">"border:0;"</span> <span class="na">src=</span><span class="s">"https://partner.rficb.ru/gui/images/a1lite_buttons/button_large.png"</span> <span class="na">value=</span><span class="s">"Оплатить"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </code></pre>
+<p>Для направления покупателя в интерфейс заранее выбраной платежной системы (минуя окно выбора способа оплаты), к параметрам запроса необходимо добавить дополнительные поля:</p>
+
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -367,6 +461,42 @@
 <td>поле обязательно для рекуррентных платежей, для остальных вариантов оплаты необходимость ввода регулируется в настройках сервиса</td>
 </tr>
 </tbody></table>
+
+<p>Значения, которые может принимать поле <strong>payment_type</strong>:</p>
+
+<table><thead>
+<tr>
+<th>Обозначение параметра</th>
+<th>Расшифровка параметра</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>spg</td>
+<td>пластиковые карты</td>
+</tr>
+<tr>
+<td>spg_test</td>
+<td>пластиковые карты, тестовое подключение</td>
+</tr>
+<tr>
+<td>mc</td>
+<td>мобильная коммерция</td>
+</tr>
+<tr>
+<td>wm</td>
+<td>Webmoney</td>
+</tr>
+<tr>
+<td>qiwi</td>
+<td>QIWI терминалы и кошелёк</td>
+</tr>
+<tr>
+<td>ym</td>
+<td>Яндекс.Деньги</td>
+</tr>
+</tbody></table>
+
+<p>mtsmoney    МТС Деньги</p>
 <h2 id='86bdb3f262'>Настройка профиля</h2><h3 id='da6a620b96'>Смена пароля</h3>
 <blockquote>
 <p>Смена пароля</p>
@@ -374,7 +504,7 @@
 <p><img src="images/property_lk_pass1.png" alt="Смена пароля" /></p>
 </blockquote>
 
-<p>В разделе <strong>Мой аккаунт</strong> &gt; <strong>Профиль</strong> можно изменить пароль и установить автоматическую смену пароля. После прошествия 30 дней система предложить имзенить пароль к ЛК.</p>
+<p>В разделе <strong>Мой аккаунт</strong> &gt; <strong>Профиль</strong> можно изменить пароль и установить автоматическую смену пароля. После прошествия 30 дней система предложит имзенить пароль к ЛК.</p>
 <h3 id='21895bd03e'>Контактные данные</h3>
 <blockquote>
 <p>Настройка профиля</p>
