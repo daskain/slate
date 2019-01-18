@@ -53,7 +53,8 @@ under the License.
     </a>
     <div class="toc-wrapper">
       <%= link_to href: 'http://www.example.com/' do %>
-      <%= image_tag "logo_white_new.png", class: 'logo' %> <%# Правка лого-ссылка %>
+      <%= image_tag "logo_white_new.png", class: 'logo' %> 
+      <% end %> <%# Правка лого-ссылка %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -65,7 +66,7 @@ under the License.
           <% end %>
         </div>
       <% end %>
-      <% end %> <%# Правка лого-ссылка %>
+      
       <% if current_page.data.search %>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Поиск">
