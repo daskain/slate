@@ -48,9 +48,7 @@
     idx.pipeline.add(
         lunr.trimmer,
         lunr.stopWordFilter,
-        lunr.stemmer,
-        trimmerEnRu,
-        lunr.ru.stemmer
+        lunr.stemmer
     )
 
     if (config) config.call(idx, idx)
@@ -1686,13 +1684,7 @@
         .replace(/^\W+/, '')
         .replace(/\W+$/, '')
   }
-  trimmerEnRu = function (token) {
-    return token
-      .replace(/^[^\wа-яёА-ЯЁ]+/, '')
-      .replace(/[^\wа-яёА-ЯЁ]+$/, '')
-  }
 
-  lunr.Pipeline.registerFunction(trimmerEnRu, 'trimmer-enru')
   lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')
   /*!
    * lunr.stemmer
