@@ -1,9 +1,9 @@
 //= require ../lib/_lunr
 //= require ../lib/_jquery
 //= require ../lib/_jquery.highlight
-//= require ../lib/_jquery.ru
-//= require ../lib/_jquery.multi
-//= require ../lib/_jquery.stemmer.support
+//= require ../lib/_lunr.ru
+//= require ../lib/_lunr.multi
+//= require ../lib/_lunr.stemmer.support
 ;(function () {
   'use strict';
   var idx = lunr(function () {
