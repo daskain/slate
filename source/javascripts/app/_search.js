@@ -1,7 +1,9 @@
 //= require ../lib/_lunr
 //= require ../lib/_jquery
 //= require ../lib/_jquery.highlight
-
+//= require ../lib/_lunr.stemmer.support.js
+//= require ../lib/_lunr.multi.js
+//= require ../lib/_lunr.ru.js
 
 ;(function () {
   'use strict';
