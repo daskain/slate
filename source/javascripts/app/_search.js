@@ -6,25 +6,18 @@
 ;(function () {
   'use strict';
   
-  var content, searchResults;
+ var content, searchResults;
   var highlightOpts = { element: 'span', className: 'search-highlight' };
   var searchDelay = 0;
   var timeoutHandle = 0;
-  var lunr = require("lunr")
-  require("lib/_lunr.stemmer.support")(lunr)
-  require('lib/_lunr.multi')(lunr)
-  require("lib/_lunr.ru")(lunr)
 
-var idx = lunr(function () {
-  this.use(lunr.multiLanguage('en', 'ru'))
-})
-  var index = new lunr.Index();
-
-  index.ref('id');
-  index.field('title', { boost: 10 });
-  index.field('body');
-  index.pipeline.add(lunr.trimmer, lunr.stopWordFilter);
-
+ var index = lunr(function () {
+    this.use(lunr.multiLanguage('ru', 'en'));
+    this.ref('id');
+    this.field('title', { boost: 10 });
+    this.field('body');
+  })
+  
   $(populate);
   $(bind);
 
