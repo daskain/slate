@@ -1,13 +1,14 @@
 //= require ../lib/_lunr
 //= require ../lib/_jquery
 //= require ../lib/_jquery.highlight
-//= require ../lib/_lunr.ru
-//= require ../lib/_lunr.multi
 //= require ../lib/_lunr.stemmer.support
+//= require ../lib/_lunr.multi
+//= require ../lib/_lunr.ru
+
 ;(function () {
   'use strict';
   var idx = lunr(function () {
-        this.use(lunr.multiLanguage('en', 'de'))
+        this.use(lunr.multiLanguage('en', 'ru'))
                               });
   var content, searchResults;
   var highlightOpts = { element: 'span', className: 'search-highlight' };
