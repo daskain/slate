@@ -1692,11 +1692,7 @@
       .replace(/[^\wа-яёА-ЯЁ]+$/, '')
   }
 
-lunr.Pipeline.registerFunction(trimmerEnRu, 'trimmer-enru');
-
-lunr.stopWordFilter.stopWords =
-  lunr.stopWordFilter.stopWords.union(
-    lunr.ru.stopWordFilter.stopWords);
+  lunr.Pipeline.registerFunction(trimmerEnRu, 'trimmer-enru')
   lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')
   /*!
    * lunr.stemmer
