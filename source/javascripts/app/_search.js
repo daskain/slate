@@ -16,7 +16,7 @@
   require("lib/_lunr.ru")(lunr)
 
 var idx = lunr(function () {
-  this.use(lunr.multiLanguage('en', 'кг'))
+  this.use(lunr.multiLanguage('en', 'ru'))
 })
   var index = new lunr.Index();
 
