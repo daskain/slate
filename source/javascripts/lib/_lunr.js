@@ -46,7 +46,7 @@
     var idx = new lunr.Index
 
     idx.pipeline.add(
-        lunr.trimmerEnRu,
+        lunr.trimmer,
         lunr.stopWordFilter,
         lunr.stemmer
     )
@@ -1684,13 +1684,13 @@
         .replace(/^\W+/, '')
         .replace(/\W+$/, '')
   }*/
-  function trimmerEnRu(token) {
+  function trimmer(token) {
   return token
     .replace(/^[^\wа-яёА-ЯЁ]+/, '')
     .replace(/[^\wа-яёА-ЯЁ]+$/, '');
   };
 
-  lunr.Pipeline.registerFunction(lunr.trimmerEnRu, 'trimmer')
+  lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')
   /*!
    * lunr.stemmer
    * Copyright (C) 2014 Oliver Nightingale
