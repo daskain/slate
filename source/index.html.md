@@ -59,6 +59,9 @@ search: true
          checked> <labe>Тест</label>
 **<input type="checkbox" checked>Периодически менять пароль.<br>**
 
+<input type="checkbox" id="scales" name="scales" checked>
+  <label for="scales">Scales</label>
+
 **Контактные данные**
 
 Вы можете указать контактные данные (номер телефона/e-mail) которые будут использоваться для обратной связи.
