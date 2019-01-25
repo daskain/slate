@@ -53,14 +53,10 @@ search: true
 В разделе **Мой аккаунт** → **Профиль** можно изменить параметры доступа к учетной записи.
 
 ### Смена пароля
-
+---
 Вы можете установить автоматическую смену пароля - после прошествия 30 дней система предложит имзенить пароль к ЛК. Управление функцией осуществляется чекбокосом: 
- <input type="checkbox" id="scales" name="scales"
-         checked> <labe>Тест</label>
-**<input type="checkbox" checked>Периодически менять пароль.<br>**
 
-<input type="checkbox" id="scales" name="scales" checked>
-  <label for="scales">Scales</label>
+**<input type="checkbox" checked>Периодически менять пароль.**
 
 **Контактные данные**
 
