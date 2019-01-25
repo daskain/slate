@@ -55,8 +55,8 @@ search: true
 ### Смена пароля
 ---
 Вы можете установить автоматическую смену пароля - после прошествия 30 дней система предложит имзенить пароль к ЛК. Управление функцией осуществляется чекбокосом: 
-<input type="checkbox" id="scales" name="scales" checked="">
-**<input type="checkbox" checked>Периодически менять пароль.**
+
+**<input type="checkbox" id="scales" name="scales" checked>  <label for="scales">Периодически менять пароль.</label>**
 
 **Контактные данные**
 
