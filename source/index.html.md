@@ -2,15 +2,15 @@
 title: Техническая документация РФИ Банк 2.0
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - html: HTML
   - php: PHP
+  - html: HTML
   - java: Java
   - python: Python
 
 toc_footers:
-  - <a href='https://home.rficb.ru/'>Личный кабинет</a>
-  - <a href='https://github.com/RFIBANK/'>Репозиторий</a>
-  - <a href='https://github.com/lord/slate'>Powered by Slate</a>
+  - <a href='https://home.rficb.ru/' target='_blank'>Личный кабинет</a>
+  - <a href='https://github.com/RFIBANK/' target='_blank'>Репозиторий</a>
+  - <a href='https://github.com/lord/slate' target='_blank'>Powered by Slate</a>
   
 
 includes:
