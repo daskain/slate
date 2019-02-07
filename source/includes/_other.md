@@ -1,5 +1,5 @@
 ## Инициализация платежа
-```html {.line-numbers}
+```html
 <form method="POST"  class="application"  accept-charset="UTF-8" action="https://partner.rficb.ru/alba/input/">
 <input type="hidden" name="key" value="b5/uqup/i/ueWBrRyp9V0n97zyHty5YtV5u/NW27nlk=”/>
 <input type="hidden" name="cost" value="1"/>
@@ -81,7 +81,7 @@ email | электронная почта клиента | поле обязат
 ## Подпись v2.0
 > Пример формирования подписи v2.0
 
-```python {.line-numbers}
+```python
 from urllib.parse import urlparse,quote
 import hashlib
 import urllib
